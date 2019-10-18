@@ -203,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="README.md" />
     <None Include="SidebarPanel_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
