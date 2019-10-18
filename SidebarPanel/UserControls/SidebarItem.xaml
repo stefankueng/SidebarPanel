@@ -1,0 +1,46 @@
+﻿<UserControl
+    x:Class="SidebarPanel.UserControls.SidebarItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SidebarPanel.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    x:Name="userControl">
+
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Border BorderBrush="{ThemeResource SystemControlDisabledChromeDisabledLowBrush}" BorderThickness="1" Background="{ThemeResource SystemChromeLowColor}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Rectangle Fill="{ThemeResource SystemControlHighlightAccentBrush}" />
+            <TextBlock Text="{x:Bind Title, Mode=OneWay}" Margin="2" HorizontalAlignment="Left" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="buttonPin" Click="buttonPin_Click"
+                        Height="37" Width="44">
+                    <Grid>
+                        <Viewbox Width="24" Height="24">
+                            <PathIcon x:Name="imgPinned"
+                                  Data="m 248.171,189.214 c 0,-18.433 -16.361,-34.484 -45.106,-44.502 L 189.69,37.143 C 214.623,31.1 228.231,20.935 228.231,8.158 V 0 H 52.365 v 8.159 c 0,12.776 13.609,22.942 38.541,28.985 l -13.38,107.558 c -28.745,10.03 -45.101,26.08 -45.101,44.513 v 8.159 h 99.709 v 75.065 c 0,4.504 3.655,8.159 8.159,8.159 4.509,0 8.159,-3.655 8.159,-8.159 v -75.065 h 99.72 v -8.16 z M 51.168,181.056 c 5.113,-8.648 18.047,-16.796 36.23,-22.425 l 5.037,-1.55 16.524,-132.882 -7.484,-1.452 C 91.826,20.876 84.712,18.564 79.626,16.318 h 121.351 c -5.091,2.246 -12.194,4.558 -21.854,6.429 l -7.484,1.452 16.524,132.882 5.042,1.561 c 17.862,5.526 30.921,13.788 36.148,22.414 -0.001,0 -178.185,0 -178.185,0 z"
+                                  Visibility="Collapsed" />
+                        </Viewbox>
+                        <Viewbox Width="24" Height="24">
+                            <PathIcon x:Name="imgUnpinned"
+                                  Data="m 91.384,165.21517 c 18.433,0 34.484,-12.52901 44.502,-34.54152 l 107.569,-10.24238 c 6.043,19.09333 16.208,29.51414 28.985,29.51414 h 8.158 V 15.269764 h -8.159 c -12.776,0 -22.942,10.421576 -28.985,29.514146 L 135.896,34.537695 C 125.866,12.525189 109.816,0 91.383,0 H 83.224 V 76.35571 H 8.159 C 3.655,76.35571 0,79.15466 0,82.60376 0,86.05669 3.655,88.8518 8.159,88.8518 h 75.065 v 76.36414 h 8.16 z M 99.542,14.353119 c 8.648,3.915462 16.796,13.820132 22.425,27.744411 l 1.55,3.85726 132.882,12.65384 1.452,-5.73114 c 1.871,-7.38906 4.183,-12.83686 6.429,-16.731645 v 92.928845 c -2.246,-3.89861 -4.558,-9.33799 -6.429,-16.73548 l -1.452,-5.73114 -132.882,12.65384 -1.561,3.86109 c -5.526,13.67847 -13.788,23.67886 -22.414,27.68162 0,-7.6e-4 0,-136.451501 0,-136.451501 z" />
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button x:Name="buttonClose" Click="buttonClose_Click" Content="&#xE8BB;" FontFamily="Segoe MDL2 Assets"
+                        Height="37" Width="44" />
+            </StackPanel>
+            <Grid Grid.Row="1" x:Name="content">
+                <ContentPresenter Content="{x:Bind Child}" />
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="SidebarPanel.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:usercontrols="using:SidebarPanel.UserControls"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <usercontrols:SidebarPanel>
+                <usercontrols:SidebarPanel.MainContent>
+                    <Grid Background="Blue">
+                        <RichEditBox />
+                    </Grid>
+                </usercontrols:SidebarPanel.MainContent>
+
+                <usercontrols:SidebarPanel.LeftContent>
+                    <usercontrols:SidebarItem Title="Left Panel 1" Background="Beige" >
+                        <TextBlock Text="this is the left panel 1 content text" />
+                    </usercontrols:SidebarItem>
+                    <usercontrols:SidebarItem Title="Left Panel 2">
+                        <TextBlock Text="this is the left panel 2 content text" />
+                    </usercontrols:SidebarItem>
+                </usercontrols:SidebarPanel.LeftContent>
+
+                <usercontrols:SidebarPanel.RightContent>
+                    <usercontrols:SidebarItem Title="Right Panel 1">
+                        <TextBlock Text="this is the right panel 1 content text" />
+                    </usercontrols:SidebarItem>
+                    <usercontrols:SidebarItem Title="Right Panel 2">
+                        <TextBlock Text="this is the right panel 2 content text" />
+                    </usercontrols:SidebarItem>
+                </usercontrols:SidebarPanel.RightContent>
+            </usercontrols:SidebarPanel>
+        </Grid>
+    </Grid>
+</Page>
