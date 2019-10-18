@@ -12,7 +12,7 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <usercontrols:SidebarPanel>
                 <usercontrols:SidebarPanel.MainContent>
-                    <Grid Background="Blue">
+                    <Grid>
                         <RichEditBox />
                     </Grid>
                 </usercontrols:SidebarPanel.MainContent>
