@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Toolkit.Uwp.UI.Controls;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -281,6 +282,15 @@ namespace SidebarPanel.UserControls
         {
             if (rightIsPinned > 0)
                 columnWithPinnedRightSidebarPanel.Width = new GridLength(columnWithRightSidebarPanel.Width.Value + 2);
+        }
+        private void gridSplitter_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            ((GridSplitter)sender).CapturePointer(e.Pointer);
+        }
+
+        private void gridSplitter_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            ((GridSplitter)sender).ReleasePointerCapture(e.Pointer);
         }
     }
 }

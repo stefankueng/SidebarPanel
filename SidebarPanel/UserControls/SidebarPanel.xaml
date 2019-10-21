@@ -230,7 +230,9 @@
                                    ResizeDirection="Auto"
                                    CursorBehavior="ChangeOnSplitterHover"
                                    Background="Transparent"
-                                   ManipulationDelta="gridSplitterLeftPanel_ManipulationDelta" />
+                                   ManipulationDelta="gridSplitterLeftPanel_ManipulationDelta"
+                                   PointerPressed="gridSplitter_PointerPressed"
+                                   PointerReleased="gridSplitter_PointerReleased"/>
         </Grid>
 
         <Grid x:Name="rightContent"
@@ -252,7 +254,9 @@
                                    ResizeBehavior="BasedOnAlignment"
                                    ResizeDirection="Auto"
                                    Background="Transparent"
-                                   ManipulationDelta="gridSplitterRightPanel_ManipulationDelta" />
+                                   ManipulationDelta="gridSplitterRightPanel_ManipulationDelta"
+                                   PointerPressed="gridSplitter_PointerPressed"
+                                   PointerReleased="gridSplitter_PointerReleased"/>
         </Grid>
     </Grid>
 </UserControl>
